@@ -3,8 +3,8 @@ import ThreeScene from './ThreeScene.jsx';
 
 const App = () => {
   return (
-    <div>
-      <ThreeScene />
+    <div className="threeContainer">
+      <ThreeScene className="threeScene"/>
     </div>
   );
 };
