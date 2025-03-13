@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useEffect } from 'react';
+import React, { useState, useRef, useMemo, useEffect } from 'react';
 
 import { Canvas } from '@react-three/fiber';
 
@@ -9,13 +9,19 @@ import Camera from "./Camera";
 import "./styles.css";
 
 const ThreeScene = () => {
+  let [camPosX, setCamPosX] = useState(); 
+
+  const getCamPosX = (newX) => {
+    setCamPosX(newX); 
+  }
+
   return (
-    <Canvas>
-      <Camera />
+    <Canvas style={{ display: 'block', width: '1904px', height: '550px' }}>
+      <Camera camPosX={camPosX} /> 
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
-      <Ground />
-      <Player />
+      <Ground /> 
+      <Player setCamPosX={setCamPosX}/> {/* pass callback function in. this is the function used */}
     </Canvas>
   );
 };

@@ -1,11 +1,19 @@
-import React, { useRef, useMemo, useEffect } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 import * as THREE from 'three';
+import { useFrame } from '@react-three/fiber';
 
-const Player = () => {
+
+
+const Player = ({ setCamPosX }) => {
   // useRef is so the component does not rerender every single time player moves - only player
   const playerRef = useRef();
-
   const texture = useMemo(() => new THREE.TextureLoader().load('/billyman.png'), []);
+
+  useFrame(() => {
+    if (playerRef.current) {
+      setCamPosX(playerRef.current.position.x);
+    }
+  });
 
   // keyboard
   useEffect(() => {

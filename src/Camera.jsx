@@ -1,12 +1,17 @@
+import { useState, useEffect } from "react"; 
+
+import { useFrame } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei';
 
-const Camera = () => {
-  return (
 
+// pass camera x pos as prop in 
+const Camera = ({ camPosX }) => {
+
+  return (
     <PerspectiveCamera 
       makeDefault
-      position={[0, 5, 10]} 
-      fov={45} />
+      position={[camPosX, 35, 150]} 
+      fov={35} />
   );
 };
 
