@@ -1,15 +1,11 @@
 import React, { useState, useRef, useMemo, useEffect, Suspense } from 'react';
-
 import { Canvas } from '@react-three/fiber';
-import { KeyboardControls} from '@react-three/drei';
  
-import Player from "./Player";
 import Ground from "./Ground";
 import Camera from "./Camera";
 import Model from './house';
 
 import "./styles.css";
-
 
 const ThreeScene = () => {
   return (
