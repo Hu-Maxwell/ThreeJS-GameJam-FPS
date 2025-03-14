@@ -1,4 +1,5 @@
-import React, { useRef, useMemo, useEffect } from 'react';
+import React, { useMemo, useEffect } from 'react';
+
 import * as THREE from 'three';
 
 const Ground = () => {

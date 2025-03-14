@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef } from "react"; 
+import { useEffect, useRef } from "react"; 
 import { useThree, useFrame } from "@react-three/fiber";
 
-import { PerspectiveCamera } from '@react-three/drei';
-import { PointerLockControls, useKeyboardControls, KeyboardControls } from '@react-three/drei';
 import * as THREE from "three";
+import { PerspectiveCamera } from '@react-three/drei';
+import { PointerLockControls } from '@react-three/drei';
 
 const SPEED = .1;
 
