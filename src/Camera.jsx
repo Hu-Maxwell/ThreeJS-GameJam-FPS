@@ -1,11 +1,13 @@
 import { useEffect, useRef } from "react"; 
-import { useThree, useFrame } from "@react-three/fiber";
 
+import { gsap } from "gsap";
 import * as THREE from "three";
-import { PerspectiveCamera } from '@react-three/drei';
-import { PointerLockControls } from '@react-three/drei';
+import { useThree, useFrame } from "@react-three/fiber";
+import { PerspectiveCamera, PointerLockControls} from '@react-three/drei';
 
 const SPEED = .1;
+const CINEMATIC_START_POS = new THREE.Vector3(0, 20, 30);
+const FINAL_POS = new THREE.Vector3(0, 5, 0);
 
 // pass camera x pos as prop in 
 const Camera = () => {
@@ -33,6 +35,22 @@ const Camera = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, [camera, gl]);
+
+
+  // =============== 
+  // intro
+  useEffect(() => {
+    camera.position.copy(CINEMATIC_START_POS);
+    // go from starting position, ease in out 
+    gsap.to(camera.position, {
+      duration: 3,
+      x: FINAL_POS.x,
+      y: FINAL_POS.y,
+      z: FINAL_POS.z,
+      ease: "power2.inOut",
+    });
+  }, [camera]);
+
 
   // =================================
   // movement
@@ -89,7 +107,6 @@ const Camera = () => {
     };
   }, []);
 
-
   useFrame(() => {
     // get forward vector (for w, s) 
     let forward = new THREE.Vector3();
@@ -129,7 +146,7 @@ const Camera = () => {
     <PerspectiveCamera 
       makeDefault
       position={[0, 5, 0]} 
-      fov={35} >
+      fov={85} >
       <PointerLockControls />
     </PerspectiveCamera>
   );
