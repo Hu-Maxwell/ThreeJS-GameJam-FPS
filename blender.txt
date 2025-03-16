@@ -1,0 +1,21 @@
+throne room: 
+https://sketchfab.com/3d-models/medieval-hallway-blockout-592da96d380d44519ae87cd317d3e612 
+https://sketchfab.com/3d-models/throne-room-c5cb8bdcb92b421bb5d6dccf25a9bdcc
+https://sketchfab.com/3d-models/throne-room-21b28d1e278d498c820f2a4c63d5f20f 
+
+torches:
+https://sketchfab.com/3d-models/medieval-torches-pack-414b179489f948eaa59f5349d882a2c6 
+https://sketchfab.com/3d-models/wall-torch-2e96415048154005a95a5eabc2f1dca9 
+https://sketchfab.com/3d-models/wall-mounted-torch-4ddcb0d2281644699e9fbf494ad9fbe5
+
+flame particle:
+
+
+knight kneeling pose:
+
+
+knight kneeling animation:
+
+
+scroll:
+- thinking of just a 2d sprite, that the camera eventually walks up to, and becomes the webpage

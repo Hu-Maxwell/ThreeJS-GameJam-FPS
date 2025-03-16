@@ -1,0 +1,1 @@
+make crown rotation fast at start, then slow down

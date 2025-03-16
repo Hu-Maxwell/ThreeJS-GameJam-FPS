@@ -1,53 +1,62 @@
-import React, { useState, useRef, useMemo, useEffect, Suspense } from 'react';
+import React, { useState, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
- 
+import { EffectComposer, Bloom } from '@react-three/postprocessing';
+
 import Ground from "./Ground";
 import Camera from "./Camera";
-import Model from './house';
+import ThroneRoom from "./ThroneRoom";
+import Crown from "./Crown";
 
 import "./styles.css";
 
+const Loader = () => {
+  return <div className="loading-screen">Loading Throne Room...</div>;
+};
+
 const ThreeScene = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
-    <Canvas>
-      <Suspense fallback={null}> 
-        <Model scale={[0.02, 0.02, 0.02]} position={[-10, 0, -20]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}/>
-      </Suspense>
-      <Suspense fallback={null}> 
-        <Model scale={[0.02, 0.02, 0.02]} position={[-10, 0, -12]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}/>
-      </Suspense>
-      <Suspense fallback={null}> 
-        <Model scale={[0.02, 0.02, 0.02]} position={[-10, 0, -27]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}/>
-      </Suspense>
-      <Suspense fallback={null}> 
-        <Model scale={[0.02, 0.02, 0.02]} position={[-10, 0, -34]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}/>
-      </Suspense>
-      <Suspense fallback={null}> 
-        <Model scale={[0.02, 0.02, 0.02]} position={[-10, 0, -41]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}/>
-      </Suspense>
-      {/*right side houses */}
-      <Suspense fallback={null}> 
-        <Model scale={[0.02, 0.02, 0.02]} position={[10, 0, -20]} rotation={[-Math.PI / 2, 0, -Math.PI / 2]}/>
-      </Suspense>
-      <Suspense fallback={null}> 
-        <Model scale={[0.02, 0.02, 0.02]} position={[10, 0, -12]} rotation={[-Math.PI / 2, 0, -Math.PI / 2]}/>
-      </Suspense>
-      <Suspense fallback={null}> 
-        <Model scale={[0.02, 0.02, 0.02]} position={[10, 0, -27]} rotation={[-Math.PI / 2, 0, -Math.PI / 2]}/>
-      </Suspense>
-      <Suspense fallback={null}> 
-        <Model scale={[0.02, 0.02, 0.02]} position={[10, 0, -34]} rotation={[-Math.PI / 2, 0, -Math.PI / 2]}/>
-      </Suspense>
-      <Suspense fallback={null}> 
-        <Model scale={[0.02, 0.02, 0.02]} position={[10, 0, -41]} rotation={[-Math.PI / 2, 0, -Math.PI / 2]}/>
-      </Suspense>
-      <Camera /> 
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={1} />
-      <Ground />  
-    </Canvas>
+    <>
+      {!isLoaded && <Loader />} 
+      <Canvas
+        pixelRatio={window.devicePixelRatio}
+        style={{ width: '100vw', height: '100vh' }}
+      >
+        <Suspense fallback={null}> 
+          <Ground />
+          <ThroneRoom 
+            position={[0, 0, 20]} 
+            scale={5} 
+            rotation={[0, Math.PI, 0]} 
+            onLoad={() => setIsLoaded(true)} 
+          />
+
+          <Crown 
+            position={[20, 10, 20]} 
+            scale={1.5} 
+            rotation={[0, Math.PI, 0.3]} 
+            onLoad={() => setIsLoaded(true)} 
+          /> 
+
+          <Camera />
+
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[10, 10, 5]} intensity={1} />
+
+          <EffectComposer resolutionScale={1}>
+            <Bloom 
+              intensity={0.6}
+              luminanceThreshold={0.2}
+              luminanceSmoothing={0.9}
+            />
+          </EffectComposer>
+
+
+        </Suspense>
+      </Canvas>
+    </>
   );
 };
 
 export default ThreeScene;
-
