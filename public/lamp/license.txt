@@ -1,0 +1,11 @@
+Model Information:
+* title:	Medieval Lamp
+* source:	https://sketchfab.com/3d-models/medieval-lamp-c4817197f15d40668c3df096135ef423
+* author:	Vova Truskov (https://sketchfab.com/FlowOff)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Medieval Lamp" (https://sketchfab.com/3d-models/medieval-lamp-c4817197f15d40668c3df096135ef423) by Vova Truskov (https://sketchfab.com/FlowOff) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

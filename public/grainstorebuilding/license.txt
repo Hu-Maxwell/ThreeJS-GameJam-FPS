@@ -1,0 +1,11 @@
+Model Information:
+* title:	Medieval Grainstore
+* source:	https://sketchfab.com/3d-models/medieval-grainstore-2e42954185884bb9ac11cbbfb60a4493
+* author:	moforabbit (https://sketchfab.com/moforabbit)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Medieval Grainstore" (https://sketchfab.com/3d-models/medieval-grainstore-2e42954185884bb9ac11cbbfb60a4493) by moforabbit (https://sketchfab.com/moforabbit) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
